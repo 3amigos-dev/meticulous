@@ -108,7 +108,7 @@ def wait_threadpool(context):
                     )
                     return
                 if tasks_empty:
-                    print("All tasks complete and no new input - quiting.")
+                    print("All tasks complete and no new input - quitting.")
                     context.controller.quit()
                     return
                 context.controller.condition.wait(60)
@@ -153,7 +153,7 @@ def clear_work_queue(target):  # pylint: disable=unused-argument
 
 def show_work_queue(target):  # pylint: disable=unused-argument
     """
-    Dispay the current workload queue
+    Display the current workload queue
     """
     key = "multiworker_workload"
     pprint.pprint(get_json_value(key, deflt=[]))
